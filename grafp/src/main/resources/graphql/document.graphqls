@@ -1,0 +1,26 @@
+extend type Query{
+    findAllDocument:[Document]
+    findByIdDocument(idDocument:ID): Document!
+}
+
+extend type Mutation{
+    addDocument(document: DocumentRequest!): Document
+}
+
+input DocumentRequest{
+    idDocument: ID!
+    typeDocument: String!
+    seria: String!
+    numar: String!
+    snils: String!
+    polis: String!
+}
+
+type Document{
+    idDocument: ID!
+    typeDocument: String!
+    seria: String!
+    numar: String!
+    snils: String!
+    polis: String!
+}

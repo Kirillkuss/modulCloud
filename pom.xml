@@ -17,7 +17,10 @@
 
     <modules>
         <module>cloud</module>
-        <module>web</module>
+        <module>grafp</module>
+        <module>klinik</module>
+        <module>ReactProd</module>
+        <module>SpringPro</module>
     </modules>
 
     <dependencyManagement>

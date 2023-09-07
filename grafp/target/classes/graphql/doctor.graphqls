@@ -1,0 +1,22 @@
+type Query {
+    findAllDoctors: [Doctor]
+    findByIdDoctor(idDoctor:ID): Doctor!
+}
+
+type Mutation {
+    addDoctor(doctor: DoctorRequest!): Doctor
+}
+
+input DoctorRequest{
+    idDoctor: ID!
+    surname: String!
+    name: String!
+    fullName: String!
+}
+
+type Doctor{
+    idDoctor: ID!
+    surname: String!
+    name: String!
+    fullName: String!
+}

@@ -1,0 +1,17 @@
+com\itrail\graph\grafp\exception\ExceptionHandler.class
+com\itrail\graph\grafp\repository\DocumentRepository.class
+com\itrail\graph\grafp\service\PatientService.class
+com\itrail\graph\grafp\controller\DocumentController.class
+com\itrail\graph\grafp\repository\PatientRepository.class
+com\itrail\graph\grafp\service\DocumentService.class
+com\itrail\graph\grafp\entity\Gender.class
+com\itrail\graph\grafp\controller\PatientController.class
+com\itrail\graph\grafp\graphQL\GDoctor.class
+com\itrail\graph\grafp\graphQL\GDocument.class
+com\itrail\graph\grafp\entity\Doctor.class
+com\itrail\graph\grafp\controller\DoctorController.class
+com\itrail\graph\grafp\repository\DoctorRepository.class
+com\itrail\graph\grafp\entity\Document.class
+com\itrail\graph\grafp\graphQL\GPatient.class
+com\itrail\graph\grafp\GrafpApplication.class
+com\itrail\graph\grafp\entity\Patient.class

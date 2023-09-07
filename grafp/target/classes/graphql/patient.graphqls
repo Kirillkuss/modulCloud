@@ -1,0 +1,35 @@
+extend type Query{
+    findAllPatient:[Patient]
+    findByIdPatient( idPatient: ID!): Patient
+}
+
+extend type Mutation{
+    addPatient(patient: PatientRequest!): Patient
+}
+
+input PatientRequest{
+    idPatient: ID!
+    surname: String!
+    name: String!
+    fullName: String!
+    gender: Gender!
+    phone: String!
+    address: String!
+    document: DocumentRequest
+}
+
+type Patient{
+    idPatient: ID!
+    surname: String!
+    name: String!
+    fullName: String!
+    gender: Gender!
+    phone: String!
+    address: String!
+    document: Document
+}
+
+enum Gender{
+    MAN
+    WOMAN
+}
