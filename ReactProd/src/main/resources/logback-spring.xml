@@ -7,12 +7,12 @@
         </layout>
     </appender>
     <appender name="RollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${LOGS}/klinik.log</file>
+        <file>${LOGS}/ReactProd.log</file>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
         </encoder>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOGS}/archived/klinik-%d{yyyy-MM-dd}.%i.log </fileNamePattern>
+            <fileNamePattern>${LOGS}/archived/ReactProd-%d{yyyy-MM-dd}.%i.log </fileNamePattern>
             <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>10MB</maxFileSize>
             </timeBasedFileNamingAndTriggeringPolicy>
@@ -22,7 +22,7 @@
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </root>
-    <logger name="klinik" level="trace" additivity="false">
+    <logger name="ReactProd" level="trace" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </logger>
