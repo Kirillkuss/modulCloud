@@ -25,7 +25,7 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class Doctor  implements Serializable {
+public class Doctor implements Serializable {
 
     @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)

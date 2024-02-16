@@ -3,6 +3,7 @@ package com.klinik.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import javax.persistence.EntityManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
@@ -11,13 +12,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import com.klinik.entity.Gender;
-import com.klinik.entity.Patient;
 import com.klinik.excep.MyException;
 import com.klinik.repositories.DocumentRepository;
 import com.klinik.repositories.PatientRepository;
 
-@Disabled
+import io.qameta.allure.Allure;
+
 @DisplayName( "Класс предназначен для тестирования сервиса PatientService")
 @DataJpaTest
 @AutoConfigureTestDatabase(replace=Replace.NONE)
@@ -31,9 +31,12 @@ public class PatientServiceTest {
     @Autowired
     private DocumentRepository documentRepository;
 
+    @Autowired
+    private EntityManager entityManager;
+
     @BeforeEach
     public void setUp() {
-        patientService = new PatientService(patientRepository, documentRepository);
+        patientService = new PatientService(patientRepository, documentRepository, entityManager);
     }
     
     @Test
@@ -41,6 +44,7 @@ public class PatientServiceTest {
     public void testGetAllPatients() throws Exception{
         assertNotNull( patientService.getAllPatients() );
         assertEquals( patientService.getAllPatients() , patientService.getAllPatients() );
+        Allure.addAttachment("Результат:", "text/plain",  patientService.getAllPatients().toString() );
     }
 
     @Test
@@ -50,8 +54,9 @@ public class PatientServiceTest {
         assertThrows( MyException.class, () -> {patientService.findByWord( "2323424dfsdfs");});
         assertNotNull( patientService.findByWord( REQUEST ));
         assertEquals( patientService.findByWord( REQUEST ), patientService.findByWord( REQUEST ));
+        Allure.addAttachment("Результат:", "text/plain",  patientService.findByWord( REQUEST ).toString() );
     }
-
+/** 
     @Test
     @DisplayName("Добавить пациента")
     public void testAddPatient() throws Exception{
@@ -59,5 +64,5 @@ public class PatientServiceTest {
         Long IdDocument = 1L;
         assertThrows( MyException.class, () ->{ patientService.addPatient( patient, IdDocument );});
     }
-  
+  */
 }

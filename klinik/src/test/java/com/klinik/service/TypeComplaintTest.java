@@ -16,7 +16,6 @@ import com.klinik.excep.MyException;
 import com.klinik.repositories.ComplaintRepository;
 import com.klinik.repositories.TypeComplaintRepository;
 
-@Disabled
 @SpringBootTest
 public class TypeComplaintTest {
 
